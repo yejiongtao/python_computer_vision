@@ -4,9 +4,5 @@ from pylab import *
 import imtools
 from scipy.ndimage import filters
 
-pil_im = Image.open('continental.jpg').convert('L')
-im = array(pil_im)
-
-gray()
-
-show()
+pil_im = Image.open('continental.jpg')
+pil_im.resize((1000, 600)).save('continental_resized.jpg')

@@ -2,7 +2,7 @@ from numpy.ma import maximum, sqrt
 from pylab import *
 
 
-def denoise(im, U_init, tolerance=0.1, tau=0.125, tv_weight=100):
+def denoise(im, U_init, tolerance=0.1, tau=0.125, tv_weight=100):   # to use this, denoise(im, im), do not understand..
     """ An implementation of the Rudin-Osher-Fatemi (ROF) denoising model
     using the numerical procedure presented in eq (11) A. Chambolle (2005).
 
