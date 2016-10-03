@@ -153,10 +153,10 @@ def sample_match_images():
 
     figure()
     gray()
-    plot_matches(im1, im2, l1, l2, matches, False)
+    plot_matches(im1, im2, l1, l2, matches)
     show()
 
 
 # sample_find_features()
-sample_match_images()
+# sample_match_images()
 

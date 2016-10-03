@@ -192,4 +192,4 @@ def sample_match_images():
 
 
 # sample_detect_corners()
-sample_match_images()
+# sample_match_images()
