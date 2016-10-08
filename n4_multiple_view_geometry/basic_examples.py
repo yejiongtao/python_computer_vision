@@ -13,7 +13,7 @@ def example_plot_3d_points():
     ax.plot(points3D[0],points3D[1],points3D[2],'k.')
 
 
-def example_compute__and_plot_epipole():
+def example_compute_and_plot_epipole():
     # index for points in first two views
     ndx = (corr[:, 0] >= 0) & (corr[:, 1] >= 0)
 
@@ -119,7 +119,7 @@ corr = genfromtxt('2D/nview-corners',dtype='int',missing_values='*')
 P = [camera.Camera(loadtxt('2D/00'+str(i+1)+'.P')) for i in range(3)]
 
 # example_plot_3d_points()
-# example_compute__and_plot_epipole()
+# example_compute_and_plot_epipole()
 # example_triangulation()
 example_compute_P_from_points()
 show()

@@ -1,4 +1,4 @@
-import homography
+from n2_image_to_image_mappings import homography
 
 from PIL import Image
 from matplotlib.tri import Triangulation
@@ -214,7 +214,7 @@ def example_triangle():
 
 
 def example_panorama():
-    import sift
+    from n1_local_image_descriptors import sift
     featname = ['part'+str(i)+'.sift' for i in range(2)]
     imname = ['part'+str(i)+'.jpg' for i in range(2)]
     l = {}

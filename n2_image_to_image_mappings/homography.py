@@ -13,8 +13,8 @@ def make_homog(points):
     """ Convert a set of points (dim*n array) to homogeneous coordinates. """
     """ e.g. [[1],     ==> [[1],
               [2]]          [2],
-                            [1]]    we store the points column-wise so that matrix multiplications
-        and point transforms are easier """
+                            [1]]
+        we store the points column-wise so that matrix multiplications and point transforms are easier """
     return vstack((points,ones((1,points.shape[1]))))
 
 
@@ -156,5 +156,5 @@ def H_from_ransac(fp,tp,model,maxiter=1000,match_theshold=10):
     data = vstack((fp,tp))
 
     # compute H and return
-    H,ransac_data = ransac.ransac(data.T, model, 4, maxiter, match_theshold, 100, return_all=True)
+    H,ransac_data = ransac.ransac(data.T, model, 4, maxiter, match_theshold, 6, return_all=True)
     return H,ransac_data['inliers']
