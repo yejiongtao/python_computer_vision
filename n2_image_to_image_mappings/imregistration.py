@@ -71,7 +71,7 @@ def rigid_alignment(imlist, points):
 def annotate_images():
     for no in range(1, 11):
         no = str(no)
-        imshow(array(Image.open('../n0_general/att_faces/s6/'+no+'.pgm')))
+        imshow(array(Image.open('att_faces/s6/'+no+'.pgm')))
         gray()
         a = ginput(3)
         savetxt('annotations/s6/' + no + '.txt',a)
@@ -80,7 +80,7 @@ def annotate_images():
 # annotate_images()
 
 # the images are grayscale and of the same size
-impath = '../n0_general/att_faces/s6'
+impath = 'att_faces/s6'
 imlist = [os.path.join(impath, f) for f in os.listdir(impath) if f.endswith('.pgm')]
 
 points_path = 'annotations/s6'
