@@ -7,20 +7,13 @@ from PIL import Image
 
 import imtools
 from mpl_toolkits.mplot3d import axes3d
+from n1_local_image_descriptors import sift
 
 
-url = 'http://www.panoramio.com/map/get_panoramas.php?order=popularity&' + \
-    'set=public&from=0&to=20&minx=-77.037564&miny=38.896662&maxx=-77.035564&maxy=38.898662&size=medium'
-c = request.urlopen(url)
+imlist = imtools.get_imlist('n6_searching_images/images')
+nbr_images = len(imlist)
+featlist = [ imlist[i][:-3]+'sift' for i in range(nbr_images)]
 
-str = c.read().decode('utf-8')
-print(str)
-
-j = json.loads(str)
-imurls = []
-for im in j['photos']:
-    imurls.append(im['photo_file_url'])
-
-for url in imurls:
-    print('downloading:', url)
+for i in range(nbr_images):
+    sift.process_image(imlist[i],featlist[i])
 

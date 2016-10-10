@@ -71,7 +71,8 @@ def example_spectral_images():
 
     # load the similarity matrix and reformat
     S = loadtxt('../n1_local_image_descriptors/example_images_matching/matchscores.txt')
-    S = 1 / (S + 1e-6)
+    S = 1 / (S + 1e-6)  # invert the scores so that the smaller, the more similar.
+                        # a small number is added to avoid division with zero
 
     # create Laplacian matrix
     rowsum = sum(S, axis=0)
