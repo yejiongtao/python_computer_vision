@@ -1,3 +1,4 @@
+CherryPy==8.1.2
 cycler==0.10.0
 matplotlib==1.5.3
 numpy==1.11.2rc1+mkl
@@ -7,7 +8,9 @@ pydot==1.2.2
 pygame==1.9.2b1
 PyOpenGL==3.1.0
 pyparsing==2.1.9
+pypiwin32==219
 python-dateutil==2.5.3
 pytz==2016.6.1
 scipy==0.18.1
 six==1.10.0
+WMI==1.4.9
