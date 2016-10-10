@@ -42,34 +42,6 @@ def example_K_means_fonts():
             subplot(4,10,i+1)
             imshow(immatrix[ind[i]].reshape(imshape))
             axis('off')
-
-    # project on the first and second components
-    projected = array([dot(V[[0, 2]], immatrix[i] - immean) for i in range(imnbr)])
-    # height and width
-    h, w = 1200, 1200
-
-    # create a new image with a white background
-    img = Image.new('RGB', (w, h), (255, 255, 255))
-    draw = ImageDraw.Draw(img)
-
-    # draw axis
-    draw.line((0, h / 2, w, h / 2), fill=(255, 0, 0))
-    draw.line((w / 2, 0, w / 2, h), fill=(255, 0, 0))
-
-    # scale coordinates to fit
-    scale = abs(projected).max(0)
-    scaled = floor(array([(p / scale) * (w / 2 - 20, h / 2 - 20) +
-                          (w / 2, h / 2) for p in projected]))
-
-    # paste thumbnail of each image
-    for i in range(imnbr):
-        nodeim = Image.open(imlist[i])
-        nodeim.thumbnail((25, 25))
-        ns = nodeim.size
-        img.paste(nodeim, (int(scaled[i][0] - ns[0] // 2), int(scaled[i][1] -
-                           ns[1] // 2), int(scaled[i][0] + ns[0] // 2 + 1), int(scaled[i][1] + ns[1] // 2 + 1)))
-    figure()
-    imshow(img)
     show()
 
 
@@ -97,11 +69,12 @@ def example_K_means_pixel():
     # create image with cluster labels
     codeim = code.reshape(steps, steps)
     codeim = imresize(codeim, im.shape[:2], interp='nearest')
+        # use 'nearest' to interpolate so that no new pixel values are introduced
 
     figure()
     imshow(codeim)
     show()
 
 
-example_K_means_fonts()
-# example_K_means_pixel()
+# example_K_means_fonts()
+example_K_means_pixel()
