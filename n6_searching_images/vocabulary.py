@@ -1,12 +1,14 @@
 import sys
 sys.path.insert(0,'..')
+sys.path.insert(1,'../n1_local_image_descriptors')
 
 import imtools
-from n1_local_image_descriptors import sift
+import sift
 from numpy.ma import log
 
 from scipy.cluster.vq import *
 from numpy import *
+import pickle
 
 
 class Vocabulary(object):
