@@ -86,7 +86,7 @@ def index_images():
 
     # load vocabulary
     with open('vocabulary.pkl', 'rb') as f:
-        voc = pickle.load(f)
+        voc = pickle.load(f,encoding='utf-8')
 
     # create indexer
     indx = Indexer('test.db', voc)

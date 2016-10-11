@@ -1,10 +1,10 @@
-import sys
-sys.path.insert(0,'..')
-sys.path.insert(1,'../n1_local_image_descriptors')
-import sift
+# import sys
+# sys.path.insert(0,'..')
+# sys.path.insert(1,'../n1_local_image_descriptors')
+# import sift
 
 import imtools
-# from n1_local_image_descriptors import sift
+from n1_local_image_descriptors import sift
 from numpy.ma import log
 
 from scipy.cluster.vq import *
@@ -77,4 +77,4 @@ def create_vocabulary():
     print('vocabulary is:', voc.name, voc.nbr_words)
 
 
-create_vocabulary()
+# create_vocabulary()
