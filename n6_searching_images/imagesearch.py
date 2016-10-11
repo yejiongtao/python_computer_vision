@@ -1,6 +1,7 @@
 from sqlite3 import dbapi2 as sqlite
-
 import pickle
+
+from n6_searching_images.vocabulary import Vocabulary
 
 
 class Indexer(object):
