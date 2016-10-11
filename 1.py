@@ -11,6 +11,5 @@ from n1_local_image_descriptors import sift
 
 
 
-for i in range(10)[0:2]:
-    print(i)
-
+b = 'nihao'.encode()
+print(b.decode())
