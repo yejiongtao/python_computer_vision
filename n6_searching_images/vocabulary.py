@@ -1,9 +1,9 @@
-import sys
-sys.path.insert(0,'..')
-sys.path.insert(1,'../n1_local_image_descriptors')
+# import sys
+# sys.path.insert(0,'..')
+# sys.path.insert(1,'../n1_local_image_descriptors')
 
 import imtools
-import sift
+from n1_local_image_descriptors import sift
 from numpy.ma import log
 
 from scipy.cluster.vq import *
@@ -30,24 +30,9 @@ class Vocabulary(object):
         descr.append(sift.read_features_from_file(featurefiles[0])[1])
         descriptors = descr[0]  # stack all features for k-means
 
-        # import os
-        # from wmi import WMI
-        # w = WMI('.')
-        # result = w.query("SELECT WorkingSet FROM Win32_PerfRawData_PerfProc_Process WHERE IDProcess=%d" % os.getpid())
-        # print(int(result[0].WorkingSet))
-
         for i in arange(1, nbr_images):
             descr.append(sift.read_features_from_file(featurefiles[i])[1])
-            # try:
             descriptors = vstack((descriptors, descr[i]))
-            # except:
-                # import os
-                # from wmi import WMI
-                # w = WMI('.')
-                # result = w.query("SELECT WorkingSet FROM Win32_PerfRawData_PerfProc_Process WHERE IDProcess=%d" % os.getpid())
-                # print(int(result[0].WorkingSet))
-                # exit(1)
-
             print(i)
 
         # k-means: last number determines number of runs
@@ -91,4 +76,4 @@ def create_vocabulary():
     print('vocabulary is:', voc.name, voc.nbr_words)
 
 
-create_vocabulary()
+# create_vocabulary()

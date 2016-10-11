@@ -1,11 +1,11 @@
 CherryPy==8.1.2
 cycler==0.10.0
 matplotlib==1.5.3
-numpy==1.11.2rc1
+numpy==1.11.2rc1+mkl
 opencv-python==3.1.0
 Pillow==3.3.1
 pydot==1.2.2
-pygame==1.9.2b8
+pygame==1.9.2b1
 PyOpenGL==3.1.0
 pyparsing==2.1.9
 pypiwin32==219
