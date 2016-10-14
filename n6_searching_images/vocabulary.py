@@ -15,8 +15,8 @@ import pickle
 class Vocabulary(object):
     def __init__(self, name):
         self.name = name
-        self.voc = []
-        self.idf = []
+        self.voc = []   # a list of word cluster centers
+        self.idf = []   # inverse document frequency for each word
         self.trainingdata = []
         self.nbr_words = 0
 

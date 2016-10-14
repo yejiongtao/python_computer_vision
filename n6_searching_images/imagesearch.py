@@ -134,6 +134,7 @@ class Searcher(object):
             candidates += c
 
         # take all unique words and reverse sort on occurrence
+        # so that the first candidate has most matches to the imwords
         tmp = [(w, candidates.count(w)) for w in set(candidates)]
         tmp.sort(key=cmp_to_key(lambda x, y: (x[1]>y[1])-(x[1]<y[1])))
             # the python2 version is tmp.sort(cmp=lambda x,y:cmp(x[1],y[1]))

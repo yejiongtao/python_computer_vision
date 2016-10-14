@@ -74,7 +74,7 @@ config = {
         'tools.sessions.on': True
     },
     '/': {
-        'tools.staticdir.root': os.path.abspath(os.path.dirname(__file__)),
+        'tools.staticdir.root': os.path.abspath(os.path.dirname(__file__)),  # must be absolute path
         'tools.staticdir.on': True,
         'tools.staticdir.dir': ''
     }
